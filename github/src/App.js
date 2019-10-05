@@ -3,12 +3,14 @@ import "./App.css";
 import React, { Component } from "react";
 import UserCard from "./components/UserCard";
 import axios from "axios";
+import Following from './components/Following'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class App extends Component {
   constructor() {
     super();
-    this.state = {
-      user: [],
+      this.state = {
+      user: {},
       follow: []
     };
   }
@@ -18,9 +20,9 @@ export class App extends Component {
       .get("https://api.github.com/users/timmitzen")
       .then(result => {
         console.log("result", result);
-        this.setState = {
+        this.setState ({
           user: result.data
-        };
+        });
       })
       .catch(error => {
         console.log(error, "error");
@@ -30,10 +32,10 @@ export class App extends Component {
       .get("https://api.github.com/users/timmitzen/following")
       .then(result => {
         console.log(result,"results")
-        this.setState = {
+        this.setState ({
           ...this.state,
           follow: result.data
-        };
+        });
       })
       .catch(error => {
         console.log(error, "error");
@@ -44,7 +46,8 @@ export class App extends Component {
     return (
       <div>
         <UserCard user={this.state.user} />
-        <p>{this.state.follow}</p>
+        <h1>Following:</h1>
+        <Following follow={this.state.follow}/>
       </div>
     );
   }
