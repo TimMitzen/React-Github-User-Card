@@ -44,11 +44,14 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
+      <h1>GitHub Project</h1>
+      <div className='container'>
+        
         <UserCard user={this.state.user} />
-        <h1>Following:</h1>
         <Following follow={this.state.follow}/>
       </div>
+      </>
     );
   }
 }

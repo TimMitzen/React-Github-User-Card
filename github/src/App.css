@@ -21,3 +21,14 @@
   color: #09d3ac;
 }
 
+.card {
+  width: 23rem;
+ }
+
+ .container {
+   display: flex;
+   }
+
+h1{
+  text-align: center;
+}
