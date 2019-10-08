@@ -13,3 +13,4 @@ class Following extends Component {
   }
 }
 export default Following;
+//maps over the people who are following me and puts them on the following card by props

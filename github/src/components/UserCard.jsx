@@ -7,9 +7,10 @@ export class UserCard extends Component {
         
         <Card className ='card'>
         <Card.Body>
-         <Card.Title><h2>{this.props.user.login}</h2> </Card.Title>
+           <Card.Title><h4>GitHub User:</h4></Card.Title>
+         <Card.Title><h2>User: {this.props.user.login}</h2> </Card.Title>
           <Card.Img src={this.props.user.avatar_url} />
-          <Card.Text><p>Following: {this.props.user.following}</p></Card.Text>
+          <Card.Text><a href={this.props.user.html_url}>Github Link</a></Card.Text>
           </Card.Body>
           
         </Card>
@@ -19,3 +20,4 @@ export class UserCard extends Component {
 }
 
 export default UserCard;
+//user card aka me
